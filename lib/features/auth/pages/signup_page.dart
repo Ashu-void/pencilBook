@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:pencilbook/features/auth/pages/signin_page.dart';
 
 class SignupPage extends StatefulWidget {
+  static route() => MaterialPageRoute(
+        builder: (context) => const SignupPage(),
+      );
+
   const SignupPage({super.key});
 
   @override
@@ -106,16 +111,21 @@ class _SignupPageState extends State<SignupPage> {
               const SizedBox(
                 height: 15,
               ),
-              RichText(
-                text: TextSpan(
-                  text: 'Already have an account?',
-                  style: Theme.of(context).textTheme.titleMedium,
-                  children: const [
-                    TextSpan(
-                      text: "Sign in",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                  ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(SigninPage.route());
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: 'Already have an account? ',
+                    style: Theme.of(context).textTheme.titleMedium,
+                    children: const [
+                      TextSpan(
+                        text: "Sign in",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               const SizedBox(

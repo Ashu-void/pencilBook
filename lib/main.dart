@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pencilbook/features/auth/pages/signin_page.dart';
 import 'package:pencilbook/features/auth/pages/signup_page.dart';
 
 void main() {
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const SignupPage(),
+      home: const SigninPage(),
     );
   }
 }
